@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  age: MyString
+  integer: MyString
+  eye_color: MyString
+  hair_color: MyString
+  phone: MyString
+  alive: false
+
+two:
+  name: MyString
+  age: MyString
+  integer: MyString
+  eye_color: MyString
+  hair_color: MyString
+  phone: MyString
+  alive: false

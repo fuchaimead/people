@@ -1,0 +1,30 @@
+<h1>Add Person</h1>
+<hr />
+<%= form_for @person do |f| %> 
+<%= f.label :name %>
+<%= f.text_field :name, required: true %>
+<br />
+<%= f.label :age %>
+<%= f.text_field :age %>
+<br />
+<%= f.label :hair_color %>
+<%= f.text_field :hair_color %>
+<br />
+<%= f.label :eye_color %>
+<%= f.text_field :eye_color %>
+<br />
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+<br />
+<%= f.label :gender %>
+<%= f.text_field :gender %>
+<br />
+<%= f.label :alive %>
+<%= f.select :alive, options_for_select(%w[yes no]) %>
+<%= f.submit %> 
+<% end %>
+
+<div class='action-buttons'>
+  <%= link_to 'Cancel', people_path %>
+  <%= link_to 'All People', people_path %>
+</div>

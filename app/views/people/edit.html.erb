@@ -1,0 +1,25 @@
+<h1> Editing <%= @person.name %>'s  Information</h1>
+<%= form_for @person do |f| %> 
+<%= f.label :name %>
+<%= f.text_field :name, required: true %>
+<br />
+<%= f.label :age %>
+<%= f.text_field :age %>
+<br />
+<%= f.label :hair_color %>
+<%= f.select :eye_color, options_for_select(%w[blonde brown black red gray other]) %>
+<br />
+<%= f.label :eye_color %>
+<%= f.select :eye_color, options_for_select(%w[blue brown black green gray other])%>
+<br />
+<%= f.label :phone %>
+<%= f.text_field :phone %>
+<br />
+<%= f.label :gender %>
+<%= f.select :gender, options_for_select(%w[female male other]) %>
+<br />
+<%= f.label :alive %>
+<%= f.select :alive, options_for_select(%w[yes no]) %>
+<%= f.submit %> 
+<% end %>
+<%= link_to 'Cancel', person_path(@person) %>
