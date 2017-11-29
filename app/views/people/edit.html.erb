@@ -8,7 +8,7 @@
   <%= f.text_field :age %>
   <br />
   <%= f.label :hair_color %>
-  <%= f.select :eye_color, options_for_select(%w[blonde brown black red gray other]) %>
+  <%= f.select :hair_color, options_for_select(%w[blonde brown black red gray other]) %>
   <br />
   <%= f.label :eye_color %>
   <%= f.select :eye_color, options_for_select(%w[blue brown black green gray other])%>
@@ -27,7 +27,7 @@
   <br />
   <%= f.label :favorite %>
   <%= f.check_box :favorite %>
-  <%= f.submit %> 
+  <%= f.submit class: 'btn btn-success' %> 
   <% end %>
 
 

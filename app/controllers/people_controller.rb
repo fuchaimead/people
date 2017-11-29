@@ -1,20 +1,23 @@
 class PeopleController < ApplicationController
+  before_action :person_params, only: [:edit, :show, :update, :destroy]
 
   def index
-    @people = Person.all
+    @people = Person.all.order(:name)
+  end
+
+  def person_params
+    @person = Person.find(params[:id])
   end
 
   def show
-    @person = Person.find(params[:id])
+    
   end
 
 
   def edit
-    @person = Person.find(params[:id])
   end
 
   def update
-    @person = Person.find(params[:id])
    if @person.update(list_params)
       #success
       redirect_to person_path(@person)
@@ -38,7 +41,7 @@ class PeopleController < ApplicationController
   end
 
   def destroy
-    Person.find(params[:id]).destroy 
+    person_params.destroy 
     redirect_to people_path 
   end
 

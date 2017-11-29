@@ -9,16 +9,16 @@
   <%= f.text_field :age %>
   <br />
   <%= f.label :hair_color %>
-  <%= f.text_field :hair_color %>
+  <%= f.select :hair_color, options_for_select(%w[blonde brown black red gray other]) %>
   <br />
   <%= f.label :eye_color %>
-  <%= f.text_field :eye_color %>
+  <%= f.select :eye_color, options_for_select(%w[blue brown black green gray other])%>
   <br />
   <%= f.label :phone %>
   <%= f.text_field :phone %>
   <br />
   <%= f.label :gender %>
-  <%= f.text_field :gender %>
+  <%= f.select :gender, options_for_select(%w[female male other]) %>
   <br />
   <%= f.label :alive %>
   <%= f.select :alive, options_for_select(%w[yes no]) %>
@@ -26,12 +26,14 @@
   <%= f.label :notes %>
   <%= f.text_area :notes %>
   <br />
-  <%= f.label :notes %>
-  <%= f.check_box :notes %>
-  <%= f.submit %>
+  <%= f.label :favorite %>
+  <%= f.check_box :favorite %>
+  <%= f.submit class: 'btn btn-success' %> 
   <% end %>
 
+
 <div class='action-buttons'>
+<br />
   <%= link_to 'Cancel', people_path, class: 'btn btn-warning' %>
   <%= link_to 'All People', people_path, class: 'btn btn-success'%>
 </div>
