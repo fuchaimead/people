@@ -8,15 +8,18 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
   end
 
+
   def edit
     @person = Person.find(params[:id])
   end
 
   def update
     @person = Person.find(params[:id])
-    if @person.update(list_params)
+   if @person.update(list_params)
+      #success
       redirect_to person_path(@person)
-    else 
+    else
+      #failed update
       render :edit
     end
   end
@@ -41,7 +44,8 @@ class PeopleController < ApplicationController
 
   private
   def list_params
-    params.require(:person).permit(:name, :age, :hair_color, :eye_color, :phone, :alive, :gender)
+    params.require(:person).permit(:name, :age, :hair_color, :eye_color,
+     :phone, :alive, :gender, :notes, :favorite)
   end
 
 end

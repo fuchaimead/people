@@ -1,15 +1,17 @@
 <div class='container'>
 <h1>List of Friends</h1>
 
+
 <% if @people.any? %>
   <% @people.each do |person| %> 
-    <br />
-   <h3> <%= link_to person.name, person_path(person) %> </h3>
+   <p class='bg-success'>  <br /> </p>
+   <h4> <%= link_to person.name, person_path(person) %> <h4>
     <% end %>
   <% else %>
   <h4> You have no friends, yet. </h4>
   <% end %>
 
   <hr />
-  <p> <%= link_to 'Add New Person', new_person_path, class: 'btn btn-primary' %> </p>
+  <p> <%= link_to 'Add New Person', new_person_path, class: 'btn btn-success' %> </p>
+    </div>
 </div>

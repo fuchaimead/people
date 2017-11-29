@@ -1,0 +1,2 @@
+class AddNotesToPerson < ApplicationRecord
+end

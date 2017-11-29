@@ -1,3 +1,4 @@
+<div class="container">
 <h1>Your Friend: <%= @person.name %> </h1>
 <hr />
 <h4> Age: <%= @person.age %> </h4>
@@ -6,12 +7,21 @@
 <h4> Eye Color: <%= @person.eye_color %> </h4>
 <h4> Gender: <%= @person.gender %> </h4>
 <h4> Alive: <%= @person.alive ? 'yes' : 'no'  %> </h4>
-<i>Created At: <%= @person.created_at %> <i>
-<i> Updated At: <%= @person.updated_at %>
-</i>
+<h4> Notes: <%= @person.notes %> </h4>
+<h4> Favorite:<%= @person.favorite ? ' yes' : ' no' %> 
+<br />
+<br />
+<i>Created At: <%= @person.created_at %> </i>
+<i> Updated At: <%= @person.updated_at %></i>
+<br />
+<br />
 
-<div class='action-buttons'>
-  <%= link_to 'Edit', edit_person_path(@person)%>
-  <%= link_to 'Delete', person_path(@person), method: :delete, data: {confirm: "are you sure you you want to delete?"} %>
-  <%= link_to 'All People', people_path %>
+
+<div>
+  <%= link_to 'Edit', edit_person_path(@person), class: 'btn btn-info'%>
+  <%= link_to 'Delete', person_path(@person), method: :delete, 
+      data: {confirm: "are you sure you you want to delete?"}, class: 'btn btn-danger' %>
+  <%= link_to 'All People', people_path, class: 'btn btn-success' %>
+</div>
+
 </div>
